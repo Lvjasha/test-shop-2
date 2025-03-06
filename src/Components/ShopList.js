@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { API_KEY, API_URL_LIST } from '../config/config';
-import ShopCard from './ShopCard';
+import ShopCart from './ShopCart';
 import Preloader from './Preloader';
 
 function ShopList(props) {
@@ -26,7 +26,7 @@ function ShopList(props) {
       {loading ? (
         <Preloader />
       ) : items.length ? (
-        items.map((item) => <ShopCard key={item.id} {...item} />)
+        items.map((item) => <ShopCart key={item.id} {...item} />)
       ) : (
         <p>Не загрузилось</p>
       )}

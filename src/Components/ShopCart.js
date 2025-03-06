@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ShopCard(props) {
+function ShopCart(props) {
   const { id, name, price, images } = props;
   return (
     <div id={'product-' + id} className="card">
@@ -21,4 +21,4 @@ function ShopCard(props) {
   );
 }
 
-export default ShopCard;
+export default ShopCart;

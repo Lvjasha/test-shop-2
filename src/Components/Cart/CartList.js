@@ -2,7 +2,8 @@ import CartItem from './CartItem';
 
 function CartList(props) {
   //общая стоимость товаров в корзине
-  console.log(`props.items ${props.items}`);
+
+  console.log(`props.removeFromCart ${props.removeFromCart}`);
   const cost = props.items.reduce(
     // общая стоимость товаров в корзине
     (sum, item) => sum + item.price * item.quantity,
@@ -28,7 +29,11 @@ function CartList(props) {
           </thead>
           <tbody>
             {props.items.map((item) => (
-              <CartItem key={item.id} {...item} />
+              <CartItem
+                key={item.id}
+                {...item}
+                removeFromCart={props.removeFromCart}
+              />
             ))}
             <tr>
               <th colSpan="3">итого</th>

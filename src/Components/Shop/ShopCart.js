@@ -1,7 +1,8 @@
 import React from 'react';
 
 function ShopCart(props) {
-  const { id, name, price, images } = props;
+  const { id, name, price, images, appendToCart } = props;
+  const item = { id: id, name: name, price: price };
   return (
     <div id={'product-' + id} className="card">
       <div className="card-image waves-effect waves-block">
@@ -14,7 +15,9 @@ function ShopCart(props) {
         <p>Цена: {price} руб.</p>
       </div>
       <div className="card-action">
-        <button className="btn-small">Купить</button>
+        <button className="btn-small" onClick={() => appendToCart(item, 1)}>
+          Купить
+        </button>
         <button className="btn-small right">Больше</button>
       </div>
     </div>

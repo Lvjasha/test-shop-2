@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { API_KEY, API_URL_LIST } from '../config/config';
+import { API_KEY, API_URL_LIST } from '../../config/config';
 import ShopCart from './ShopCart';
-import Preloader from './Preloader';
+import Preloader from '../Preloader';
 
 function ShopList(props) {
   const [items, setItems] = useState([]);
@@ -26,7 +26,9 @@ function ShopList(props) {
       {loading ? (
         <Preloader />
       ) : items.length ? (
-        items.map((item) => <ShopCart key={item.id} {...item} />)
+        items.map((item) => (
+          <ShopCart key={item.id} {...item} appendToCart={props.appendToCart} />
+        ))
       ) : (
         <p>Не загрузилось</p>
       )}

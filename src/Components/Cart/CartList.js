@@ -1,9 +1,10 @@
-import React from 'react';
 import CartItem from './CartItem';
 
 function CartList(props) {
   //общая стоимость товаров в корзине
+  console.log(`props.items ${props.items}`);
   const cost = props.items.reduce(
+    // общая стоимость товаров в корзине
     (sum, item) => sum + item.price * item.quantity,
     0
   );
@@ -30,7 +31,7 @@ function CartList(props) {
               <CartItem key={item.id} {...item} />
             ))}
             <tr>
-              <th>итого</th>
+              <th colSpan="3">итого</th>
               <th>{cost}</th>
               <th>руб.</th>
             </tr>

@@ -5,7 +5,7 @@ function ShopCart(props) {
   const item = { id: id, name: name, price: price };
   return (
     <div id={'product-' + id} className="card">
-      <div className="card-image waves-effect waves-block">
+      <div className="card-image waves-effect waves-block waves-light">
         <img className="activator" src={images.icon} alt="" />
       </div>
       <div className="card-content">

@@ -11,7 +11,7 @@ function Content() {
   //сообщение после добавления в корзину
   const [showAlert, setShowAlert] = useState(null);
 
-  const appendToCart = (item, quantity) => {
+  const appendToCart = (item, quantity = 1) => {
     const itemIndex = cartItems.findIndex((value) => value.id === item.id);
     if (itemIndex < 0) {
       const newItem = {
@@ -28,7 +28,7 @@ function Content() {
       newCart.splice(itemIndex, 1, newItem);
       setCartItems(newCart);
     }
-    const appendToCart = item.name + 'добавлен в корзину';
+    setShowAlert(item.name + 'добавлен в корзину');
   };
 
   const toggleShow = () => setShowCart(!showCart);
